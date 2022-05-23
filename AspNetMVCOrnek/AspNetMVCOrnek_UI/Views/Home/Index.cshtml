@@ -1,0 +1,36 @@
+﻿@using AspNetMVCOrnek_EntityLayer.Entities
+@model List<Student>
+@{
+    ViewBag.Title = "Home Page";
+}
+@if (Model.Count == 0)
+{
+<div class="alert alert-warning">
+    Sistemde kayıtlı öğrenci bulunmamaktadır.
+</div>
+}
+else // Model.Count >0 olduğu zaman çalışacaktır.
+{
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>İsim</th>
+                <th>Soyisim</th>
+            </tr>
+            
+        </thead>
+        <tbody>
+            @foreach (var item in Model) // Kaç adet öğrenci varsa o kadar dön
+                {
+                    //Her defasında bir satır ekle
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Surname</td>
+            </tr>
+                }
+
+        </tbody>
+    </table>
+}
