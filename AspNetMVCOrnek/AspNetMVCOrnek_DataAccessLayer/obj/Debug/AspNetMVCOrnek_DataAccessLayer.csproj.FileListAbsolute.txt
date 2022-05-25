@@ -1,0 +1,17 @@
+C:\Users\yasingoktepe\Documents\GitHub\AspNetMVCExample\AspNetMVCOrnek\AspNetMVCOrnek_DataAccessLayer\bin\Debug\AspNetMVCOrnek_DataAccessLayer.dll.config
+C:\Users\yasingoktepe\Documents\GitHub\AspNetMVCExample\AspNetMVCOrnek\AspNetMVCOrnek_DataAccessLayer\bin\Debug\AspNetMVCOrnek_DataAccessLayer.dll
+C:\Users\yasingoktepe\Documents\GitHub\AspNetMVCExample\AspNetMVCOrnek\AspNetMVCOrnek_DataAccessLayer\bin\Debug\AspNetMVCOrnek_DataAccessLayer.pdb
+C:\Users\yasingoktepe\Documents\GitHub\AspNetMVCExample\AspNetMVCOrnek\AspNetMVCOrnek_DataAccessLayer\bin\Debug\AspNetMVCOrnek_EntityLayer.dll
+C:\Users\yasingoktepe\Documents\GitHub\AspNetMVCExample\AspNetMVCOrnek\AspNetMVCOrnek_DataAccessLayer\bin\Debug\EntityFramework.dll
+C:\Users\yasingoktepe\Documents\GitHub\AspNetMVCExample\AspNetMVCOrnek\AspNetMVCOrnek_DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\yasingoktepe\Documents\GitHub\AspNetMVCExample\AspNetMVCOrnek\AspNetMVCOrnek_DataAccessLayer\bin\Debug\AspNetMVCOrnek_EntityLayer.pdb
+C:\Users\yasingoktepe\Documents\GitHub\AspNetMVCExample\AspNetMVCOrnek\AspNetMVCOrnek_DataAccessLayer\bin\Debug\AspNetMVCOrnek_EntityLayer.dll.config
+C:\Users\yasingoktepe\Documents\GitHub\AspNetMVCExample\AspNetMVCOrnek\AspNetMVCOrnek_DataAccessLayer\bin\Debug\EntityFramework.xml
+C:\Users\yasingoktepe\Documents\GitHub\AspNetMVCExample\AspNetMVCOrnek\AspNetMVCOrnek_DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\yasingoktepe\Documents\GitHub\AspNetMVCExample\AspNetMVCOrnek\AspNetMVCOrnek_DataAccessLayer\obj\Debug\AspNetMVCOrnek_DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\yasingoktepe\Documents\GitHub\AspNetMVCExample\AspNetMVCOrnek\AspNetMVCOrnek_DataAccessLayer\obj\Debug\AspNetMVCOrnek_DataAccessLayer.Migrations.initializeDB.resources
+C:\Users\yasingoktepe\Documents\GitHub\AspNetMVCExample\AspNetMVCOrnek\AspNetMVCOrnek_DataAccessLayer\obj\Debug\AspNetMVCOrnek_DataAccessLayer.csproj.GenerateResource.cache
+C:\Users\yasingoktepe\Documents\GitHub\AspNetMVCExample\AspNetMVCOrnek\AspNetMVCOrnek_DataAccessLayer\obj\Debug\AspNetMVCOrnek_DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\yasingoktepe\Documents\GitHub\AspNetMVCExample\AspNetMVCOrnek\AspNetMVCOrnek_DataAccessLayer\obj\Debug\AspNetMVCOrnek_DataAccessLayer.csproj.CopyComplete
+C:\Users\yasingoktepe\Documents\GitHub\AspNetMVCExample\AspNetMVCOrnek\AspNetMVCOrnek_DataAccessLayer\obj\Debug\AspNetMVCOrnek_DataAccessLayer.dll
+C:\Users\yasingoktepe\Documents\GitHub\AspNetMVCExample\AspNetMVCOrnek\AspNetMVCOrnek_DataAccessLayer\obj\Debug\AspNetMVCOrnek_DataAccessLayer.pdb

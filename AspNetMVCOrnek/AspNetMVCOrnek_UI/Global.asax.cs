@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AspNetMVCOrnek_BussinessLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,6 +17,7 @@ namespace AspNetMVCOrnek_UI
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            Logger.LogMessage("*******UYGULAMA BAŞLADI********");
         }
     }
 }

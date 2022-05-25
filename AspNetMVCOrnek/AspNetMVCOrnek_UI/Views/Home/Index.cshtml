@@ -23,6 +23,23 @@
         @TempData["OgrenciSilMesaji"]
     </div>
 }
+
+@if (TempData["OgrenciGuncelleHataMesaji"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["OgrenciGuncelleHataMesaji"]
+    </div>
+}
+
+@if (TempData["OgrenciGuncelleMesaji"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["OgrenciGuncelleMesaji"]
+    </div>
+}
+
+
+
 <div>
 
     <a href="/Home/AddStudent" class="btn btn-info">Yeni Öğrenci Ekle</a>
@@ -46,8 +63,7 @@ else //Model.Count > 0 olduğu zaman çalışacaktır
         <thead>
             <tr>
                 <th>Sıra No</th>
-                <th>İsim</th>
-                <th>Soyisim</th>
+                <th>İsim Soyisim</th>
                 <th>İşlem</th>
             </tr>
         </thead>
@@ -57,8 +73,15 @@ else //Model.Count > 0 olduğu zaman çalışacaktır
                 //Her defasına bir satır ekle
                 <tr>
                     <td>@(++siraNo)</td>
-                    <td>@item.Name</td>
-                    <td>@item.Surname</td>
+                    <td>
+                        <button class="btn btn-sm btn-default"
+                                onclick="OgrenciBilgileriniGetir(@item.Id)"
+                                data-toggle="modal"
+                                data-target="#myModal">
+                            @item.Name @item.Surname
+                        </button>
+
+                    </td>
                     <td>
                         <a href="/Home/DeleteStudent/@item.Id" class="btn btn-danger">Sil</a>
 
@@ -77,6 +100,57 @@ else //Model.Count > 0 olduğu zaman çalışacaktır
     </table>
 }
 
+
+<!--Modal Başlangıç-->
+<div class="modal fade col-md-12" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal Başlangıç-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Öğrenci Detay</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <div id="form-modal" class="modal-body">
+                @using (Html.BeginForm("OgrenciGuncelle", "Home", FormMethod.Post,
+
+                    new { @class = "form-horizontal" }))
+
+                {
+                    <div class="col-12">
+                        <input type="hidden" name="Id" id="Id" />
+                        <div class="form-group" style="margin:15px;">
+                            @Html.Label("İsim")
+                            @Html.TextBox("Name", "", new { @class = "form-control" })
+                        </div>
+                        <div class="form-group" style="margin:15px;">
+                            @Html.Label("Soyisim")
+                            <input id="Surname" name="Surname" type="text"
+                                   class="form-control" />
+                        </div>
+                        <div class="form-group" style="margin:5px;">
+                            <input type="button" value="KAPAT"
+                                   class="btn btn-danger"
+                                   data-dismiss="modal"
+                                   style="float:left" />
+                            <input type="submit" class="btn btn-info"
+                                   style="float:right" value="GÜNCELLE" />
+                        </div>
+
+                    </div>
+                }
+
+            </div>
+
+            <!--Modal Content Bitişi-->
+        </div>
+
+    </div>
+</div>
+<!--Modal Bitiş-->
+
+
+
 <script type="text/javascript">
     function SilmeIsleminiOnayla(id) {
         //alert("geldi");
@@ -90,7 +164,7 @@ else //Model.Count > 0 olduğu zaman çalışacaktır
                 dataType: "json",
                 success: function (response) {
                     alert(response.message);
-                   window.location.href = "/Home/Index";
+                    window.location.href = "/Home/Index";
                 },
                 error: function (error) {
                     alert(error.message);
@@ -100,4 +174,33 @@ else //Model.Count > 0 olduğu zaman çalışacaktır
             });
         }
     }
+
+    function OgrenciBilgileriniGetir(id) {
+        //alert("geldi");
+        //alert(id);
+        $.ajax({
+            type: "GET",
+            url: "/Home/OgrenciBilgileri/" + id,
+            success: function (res) {
+                if (res.success) {
+                    document.getElementById("Name").value = res.data.Name;
+
+                    //$("#Name").val(res.data.Name);
+                    $("#Surname").val(res.data.Surname);
+                    $("#Id").val(res.data.Id);
+
+                }
+                else {
+                    $("#myModal").modal('hide');
+                    alert("Beklenmedik bir hata oldu!");
+                }
+
+            },
+            error: function (err) {
+                $("#myModal").modal('hide');
+                alert("Beklenmedik bir hata oldu!");
+            }
+        });
+    }
+
 </script>

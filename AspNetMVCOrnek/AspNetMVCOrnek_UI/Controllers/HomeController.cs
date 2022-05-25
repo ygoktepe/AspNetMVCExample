@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using AspNetMVCOrnek_EntityLayer.Entities;
+using AspNetMVCOrnek_BussinessLayer;
 
 namespace AspNetMVCOrnek_UI.Controllers
 {
@@ -14,6 +15,7 @@ namespace AspNetMVCOrnek_UI.Controllers
         public ActionResult Index()
         {
             var list = sRepo.Queryable().Where(x=> !x.IsDeleted).ToList();
+            Logger.LogMessage($"Home/Index çağrıldı {list.Count} adet öğrenci listelendi");
             return View(list); //sayfaya model gönderdim
         }
 
@@ -64,6 +66,7 @@ namespace AspNetMVCOrnek_UI.Controllers
             catch (Exception ex)
             {
                 //ex loglansın
+                Logger.LogMessage($"Home/AddStudent sayfası hata oldu. {ex}");
                 ModelState.AddModelError("", "Beklenmedik bir hata oldu!");
                return View(model);
                 //2. yöntem
@@ -175,6 +178,60 @@ namespace AspNetMVCOrnek_UI.Controllers
             catch (Exception ex)
             {
                 return Json(new {success=false, message=ex.Message });
+            }
+        }
+
+        [HttpGet]
+
+        public JsonResult OgrenciBilgileri(int id)
+        {
+            try
+            {
+                if (id>0)
+                {
+                    var student = sRepo.GetById(id);
+                    if (student == null)
+                    {
+                        throw new Exception("HATA: Öğrenci Bulunamadı!");
+
+                    }
+                    return Json(new { success = true, data = student },JsonRequestBehavior.AllowGet);
+                }
+                else
+                {
+                    throw new Exception("HATA: id parametresi düzgün verilmelidir!");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return Json(new { success = false, message = ex.Message }, JsonRequestBehavior.AllowGet);
+            }
+        }
+        
+        [HttpPost]
+        public ActionResult OgrenciGuncelle(Student model)
+        {
+            try
+            {
+                var student = sRepo.GetById(model.Id); 
+                if(student == null)
+                {
+                    throw new Exception("Öğrenci bulunamadığı için güncelleme yapılamadı!");
+                }
+                student.Name = model.Name;
+                student.Surname = model.Surname;
+                sRepo.Update();
+                TempData["OgrenciGuncelleMesaji"] = "Öğrenci bilgileri güncellendi";
+                return RedirectToAction("Index", "Home");
+
+            }
+            catch (Exception ex)
+            {
+
+                TempData["OgrenciGuncelleHataMesaji"] = "Beklenmedik bir hata oldu! Hata: " + ex.Message;
+                return RedirectToAction("Index", "Home");
+
             }
         }
 

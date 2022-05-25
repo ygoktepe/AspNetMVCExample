@@ -1,0 +1,12 @@
+C:\Users\yasingoktepe\Documents\GitHub\AspNetMVCExample\AspNetMVCOrnek\AspNetMVCOrnek_EntityLayer\bin\Debug\AspNetMVCOrnek_EntityLayer.dll.config
+C:\Users\yasingoktepe\Documents\GitHub\AspNetMVCExample\AspNetMVCOrnek\AspNetMVCOrnek_EntityLayer\bin\Debug\AspNetMVCOrnek_EntityLayer.dll
+C:\Users\yasingoktepe\Documents\GitHub\AspNetMVCExample\AspNetMVCOrnek\AspNetMVCOrnek_EntityLayer\bin\Debug\AspNetMVCOrnek_EntityLayer.pdb
+C:\Users\yasingoktepe\Documents\GitHub\AspNetMVCExample\AspNetMVCOrnek\AspNetMVCOrnek_EntityLayer\bin\Debug\EntityFramework.dll
+C:\Users\yasingoktepe\Documents\GitHub\AspNetMVCExample\AspNetMVCOrnek\AspNetMVCOrnek_EntityLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\yasingoktepe\Documents\GitHub\AspNetMVCExample\AspNetMVCOrnek\AspNetMVCOrnek_EntityLayer\bin\Debug\EntityFramework.xml
+C:\Users\yasingoktepe\Documents\GitHub\AspNetMVCExample\AspNetMVCOrnek\AspNetMVCOrnek_EntityLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\yasingoktepe\Documents\GitHub\AspNetMVCExample\AspNetMVCOrnek\AspNetMVCOrnek_EntityLayer\obj\Debug\AspNetMVCOrnek_EntityLayer.csproj.AssemblyReference.cache
+C:\Users\yasingoktepe\Documents\GitHub\AspNetMVCExample\AspNetMVCOrnek\AspNetMVCOrnek_EntityLayer\obj\Debug\AspNetMVCOrnek_EntityLayer.csproj.CoreCompileInputs.cache
+C:\Users\yasingoktepe\Documents\GitHub\AspNetMVCExample\AspNetMVCOrnek\AspNetMVCOrnek_EntityLayer\obj\Debug\AspNetMVCOrnek_EntityLayer.csproj.CopyComplete
+C:\Users\yasingoktepe\Documents\GitHub\AspNetMVCExample\AspNetMVCOrnek\AspNetMVCOrnek_EntityLayer\obj\Debug\AspNetMVCOrnek_EntityLayer.dll
+C:\Users\yasingoktepe\Documents\GitHub\AspNetMVCExample\AspNetMVCOrnek\AspNetMVCOrnek_EntityLayer\obj\Debug\AspNetMVCOrnek_EntityLayer.pdb
