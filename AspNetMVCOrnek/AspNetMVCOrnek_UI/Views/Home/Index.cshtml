@@ -3,34 +3,101 @@
 @{
     ViewBag.Title = "Home Page";
 }
+
+<h3>Sistemdeki Öğrenciler</h3>
+@if (TempData["AddStudentSuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["AddStudentSuccessMessage"]
+    </div>
+}
+@if (TempData["OgrenciSilHataMesaji"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["OgrenciSilHataMesaji"]
+    </div>
+}
+@if (TempData["OgrenciSilMesaji"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["OgrenciSilMesaji"]
+    </div>
+}
+<div>
+
+    <a href="/Home/AddStudent" class="btn btn-info">Yeni Öğrenci Ekle</a>
+</div>
+
+@{
+    int siraNo = 0;
+}
+
 @if (Model.Count == 0)
 {
-<div class="alert alert-warning">
-    Sistemde kayıtlı öğrenci bulunmamaktadır.
-</div>
+    <br />
+    <div class="alert alert-warning">
+        Sistemde kayıtlı öğrenci bulunmamaktadır.
+    </div>
 }
-else // Model.Count >0 olduğu zaman çalışacaktır.
+else //Model.Count > 0 olduğu zaman çalışacaktır
 {
+
     <table class="table table-hover">
         <thead>
             <tr>
-                <th>Id</th>
+                <th>Sıra No</th>
                 <th>İsim</th>
                 <th>Soyisim</th>
+                <th>İşlem</th>
             </tr>
-            
         </thead>
         <tbody>
             @foreach (var item in Model) // Kaç adet öğrenci varsa o kadar dön
-                {
-                    //Her defasında bir satır ekle
-            <tr>
-                <td>@item.Id</td>
-                <td>@item.Name</td>
-                <td>@item.Surname</td>
-            </tr>
-                }
+            {
+                //Her defasına bir satır ekle
+                <tr>
+                    <td>@(++siraNo)</td>
+                    <td>@item.Name</td>
+                    <td>@item.Surname</td>
+                    <td>
+                        <a href="/Home/DeleteStudent/@item.Id" class="btn btn-danger">Sil</a>
 
+                        <a href="/Home/OgrenciSil/@item.Id" class="btn btn-default"
+                           style="background-color:mediumpurple;">Sil</a>
+
+                        <input type="button"
+                               value="Sil"
+                               class="btn btn-default"
+                               style="background-color:pink;"
+                               onclick="SilmeIsleminiOnayla(@item.Id)" />
+                    </td>
+                </tr>
+            }
         </tbody>
     </table>
 }
+
+<script type="text/javascript">
+    function SilmeIsleminiOnayla(id) {
+        //alert("geldi");
+        //alert(id);
+        var result = confirm("Silmek istediğine emin misin?");
+        if (result) {
+            $.ajax({
+                type: 'post',
+                url: "/Home/SilOgrenci/" + id,
+                contentType: 'application/json; charset=utf-8',
+                dataType: "json",
+                success: function (response) {
+                    alert(response.message);
+                   window.location.href = "/Home/Index";
+                },
+                error: function (error) {
+                    alert(error.message);
+                    console.log(error);
+                }
+
+            });
+        }
+    }
+</script>

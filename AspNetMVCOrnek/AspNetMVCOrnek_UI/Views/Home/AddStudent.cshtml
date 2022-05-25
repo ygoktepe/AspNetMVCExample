@@ -1,0 +1,34 @@
+﻿@using AspNetMVCOrnek_EntityLayer.Entities
+@model Student
+
+@{
+    ViewBag.Title = "AddStudent";
+}
+
+<h2>Yeni Öğrenci Ekle</h2>
+
+
+@using (Html.BeginForm("AddStudent", "Home", FormMethod.Post,
+    new { @class = "form-horizontal" }))
+{
+    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+
+    @*<label class="buraya class verilebilir">İsim</label>*@
+    @*@Html.Label("İsminiz", new {@class= "buraya class verilebilir" })*@
+    @Html.ValidationMessageFor(x => x.Name, "", new { @class = "text-danger" }) <br />
+
+    @Html.LabelFor(x => x.Name)
+
+    @*@Html.TextBox("deneme")
+        <input type="text" name="Surname" class="form-control" />*@
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+
+    <label>Soyisim</label>
+    <input type="text" name="Surname" class="form-control" />
+    @*@Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })*@
+    @*@Html.ValidationMessageFor(x => x.Surname, "", new { @class = "text-danger" })*@
+    <br />
+
+    <input type="submit" value="Kaydet" class="btn btn-info" />
+}

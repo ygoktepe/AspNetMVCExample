@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("AspNetMVCOrnek_DataAccessLayer")]
+[assembly: AssemblyTitle("AspNetMVCOrnek_BussinessLayer")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("AspNetMVCOrnek_DataAccessLayer")]
+[assembly: AssemblyProduct("AspNetMVCOrnek_BussinessLayer")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("1586f4f0-c340-4752-bf40-8e035d96223b")]
+[assembly: Guid("25e7b0ff-8922-4b56-bc95-ce1574e30d74")]
 
 // Version information for an assembly consists of the following four values:
 //
